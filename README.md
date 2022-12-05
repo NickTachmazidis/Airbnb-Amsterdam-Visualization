@@ -7,8 +7,8 @@ The app shows a DataFrame and a map with points that contain the information of 
 The dataset is based on data from http://insideairbnb.com/get-the-data/ 
 
 # Requirements
-pandas
-streamlit
+pandas <br>
+streamlit <br>
 plotly
 
 # Link
