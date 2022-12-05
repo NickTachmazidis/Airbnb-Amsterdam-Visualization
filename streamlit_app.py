@@ -3,20 +3,19 @@ import plotly.express as px
 import streamlit as st
 
 # Display title and text
-st.title("Week 1 - Data and visualization")
-st.markdown("Here we can see the dataframe created during this weeks project.")
+st.title("Airbnb-Amsterdam-Visualization")
+st.markdown("The dataframe containing the data for the project")
 
 # Read dataframe
 dataframe = pd.read_csv(
-    "WK1_Airbnb_Amsterdam_listings_proj_solution.csv",
-    names=[
-        "Airbnb Listing ID",
-        "Price",
-        "Latitude",
-        "Longitude",
-        "Meters from chosen location",
-        "Location",
-    ],
+    "Airbnb_Amsterdam_listings.csv",
+    names=["Airbnb Listing ID",
+            "Price",
+            "Latitude",
+            "Longitude",
+            "Meters from chosen location",
+            "Location",
+          ],
 )
 
 # We have a limited budget, therefore we would like to exclude
@@ -26,7 +25,7 @@ dataframe = dataframe[dataframe["Price"] <= 100]
 # Display as integer
 dataframe["Airbnb Listing ID"] = dataframe["Airbnb Listing ID"].astype(int)
 # Round of values
-dataframe["Price"] = "£ " + dataframe["Price"].round(2).astype(str) # <--- CHANGE THIS POUND SYMBOL IF YOU CHOSE CURRENCY OTHER THAN POUND
+dataframe["Price"] = "EUR" + dataframe["Price"].round(2).astype(str)
 # Rename the number to a string
 dataframe["Location"] = dataframe["Location"].replace(
     {1.0: "To visit", 0.0: "Airbnb listing"}
@@ -34,7 +33,7 @@ dataframe["Location"] = dataframe["Location"].replace(
 
 # Display dataframe and text
 st.dataframe(dataframe)
-st.markdown("Below is a map showing all the Airbnb listings with a red dot and the location we've chosen with a blue dot.")
+st.markdown("Below is a map showing all the Airbnb listings with a red dot and the Van Gogh museum with a blue dot.")
 
 # Create the plotly express figure
 fig = px.scatter_mapbox(
