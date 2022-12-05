@@ -25,7 +25,7 @@ dataframe = dataframe[dataframe["Price"] <= 100]
 # Display as integer
 dataframe["Airbnb Listing ID"] = dataframe["Airbnb Listing ID"].astype(int)
 # Round of values
-dataframe["Price"] = "EUR" + dataframe["Price"].round(2).astype(str)
+dataframe["Price"] = dataframe["Price"].round(2).astype(str) + " €"
 # Rename the number to a string
 dataframe["Location"] = dataframe["Location"].replace(
     {1.0: "To visit", 0.0: "Airbnb listing"}
