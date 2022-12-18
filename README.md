@@ -3,7 +3,7 @@
 
 The app shows a DataFrame and a map with points that contain the information of Airbnb listing IDs, the prices, the latitude and longitude of the points, the distance in meters from the chosen location, the Van Gogh museum and the kind of location.
 
-The dataset is based on data from http://insideairbnb.com/get-the-data/ 
+The dataset is based on data from http://insideairbnb.com/get-the-data/ and was cleaned using the python's numpy library.
 
 # Requirements
 pandas <br>
